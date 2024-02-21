@@ -1,0 +1,43 @@
+.container{
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.top{
+    display: flex;
+}
+
+.imageContainer{
+    width: 90%;
+    height: 400px;
+    position: relative;
+}
+
+.image{
+    object-fit: cover;
+}
+
+.date{
+    font-size: 12px;
+    transform: rotate(270deg);
+    margin: auto;
+}
+
+.title{
+    width: 90%;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.description{
+    font-weight: 300;
+    color: gray;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.link{
+    text-decoration: underline;
+}

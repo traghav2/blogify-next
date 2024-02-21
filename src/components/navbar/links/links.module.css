@@ -1,0 +1,53 @@
+.links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logout{
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.logout:hover{
+    opacity: 0.8;
+}
+
+.menuButton,
+.mobileLinks{
+    display: none;
+}
+
+@media(max-width: 1024px){
+    .links{
+        display: none;
+    }
+
+    .menuButton{
+        display: block;
+        cursor: pointer;
+        /* z-index: 11 ; */
+    }
+
+    .mobileLinks{
+        position: absolute;
+        z-index: 10;
+        /* background-color: red; */
+        /* top: 100px; */
+        top: 13.5%;
+        right: 0;
+        height: 100%;
+        /* bottom: 0; */
+        background-color: rgb(0, 0, 0);
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+        height: calc(100vh-100px);
+    }
+}

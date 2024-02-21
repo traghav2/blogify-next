@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+}
+
+.organization{
+    color: gray;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.copyright{
+    color: gray;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
