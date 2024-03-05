@@ -2,35 +2,17 @@
 
 import { useState } from "react";
 import styles from "./links.module.css";
-import NavLink from "./navLink/Navlink";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 
 const Links = () => {
 
-    const links = [
-        {
-            title: "Home",
-            path: "/",
-        },
-        {
-            title: "About",
-            path: "/about",
-        },
-        {
-            title: "Contact",
-            path: "/contact",
-        },
-        {
-            title: "Blog",
-            path: "/blog",
-        },
-    ];
-
     const [open, setOpen] = useState(false);
-
+    const pathname = usePathname();
     //TEMPORARY
-    const session = true;
-    const isAdmin = true;
+    const session = false;
+    const isAdmin = false;
 
     function handleOpenChange() {
         setOpen((prev) => !prev);
@@ -40,9 +22,10 @@ const Links = () => {
     return (
         <div className={styles.container}>
             <div className={styles.links}>
-                {links.map((link) => (
-                    <NavLink item={link} key={link.title} />
-                ))}
+                <Link href={'/about'} className={`${pathname === '/about' && styles.active} ${styles.link}`}>About</Link>
+                <Link href={'/contact'} className={`${pathname === '/contact' && styles.active} ${styles.link}`}>Contact</Link>
+                <Link href={'/'} className={styles.logo}><Image src='/logo.png' width={80} height={80} className={styles.logo} /></Link>
+                <Link href={'/blog'} className={`${pathname === '/blog' && styles.active} ${styles.link}`}>Blog</Link>
 
                 {session ? (
                     <>
@@ -50,17 +33,18 @@ const Links = () => {
                         <button className={styles.logout}>Logout</button>
                     </>
                 ) : (
-                    <NavLink item={{ title: "Login", path: "/login" }} />
+                    <Link href='/login' className={`${pathname === '/login' && styles.active} ${styles.link}`}>Login</Link>
                 )}
             </div>
-            <Image className={styles.menuButton} src='/menu.png' alt="" height={30} width={30} onClick={handleOpenChange} />
+            <div className={styles.mobileNav}>
+                <Link href='/'><Image className={styles.mobileLogo} src='/logo.png' alt="" height={30} width={30} /></Link>
+                <Image className={styles.menuButton} src='/menu.png' alt="" height={30} width={30} onClick={handleOpenChange} />
+            </div>
             {open && (
                 <div className={styles.mobileLinks}>
-                    {links.map((link) => {
-                        return (
-                            <NavLink item={link} key={link.title} />
-                        )
-                    })}
+                    <Link onClick={handleOpenChange} href={'/about'} className={`${pathname === '/about' && styles.active} ${styles.link}`}>About</Link>
+                    <Link onClick={handleOpenChange} href={'/contact'} className={`${pathname === '/contact' && styles.active} ${styles.link}`}>Contact</Link>
+                    <Link onClick={handleOpenChange} href={'/blog'} className={`${pathname === '/blog' && styles.active} ${styles.link}`}>Blog</Link>
                 </div>
             )}
         </div>

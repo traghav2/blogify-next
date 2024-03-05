@@ -1,11 +1,21 @@
 .container{
     height: 110px;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    border-bottom: thin solid rgb(132, 151, 206);
 }
 
 .logo{
     font-weight: bold;
     font-size: 30px;
+}
+
+@media(max-width: 1024px){
+    .container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 }

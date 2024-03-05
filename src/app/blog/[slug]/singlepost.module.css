@@ -1,6 +1,8 @@
 .container{
     display: flex;
     gap: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .imageContainer{
@@ -27,12 +29,13 @@
 
 .image{
     object-fit: cover;
+    border-radius: 20px;
 }
 
 .detailText{
     display: flex;  
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 .detailTitle{
@@ -48,7 +51,7 @@
     font-size: 18px;;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
     .imageContainer{
         display: none;
     }

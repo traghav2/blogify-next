@@ -6,7 +6,7 @@ const AboutPage = () => {
         <div className={styles.container}>
 
         <div className={styles.textContainer}>
-            <h2 className={styles.subtitle}>About Agency</h2>
+            <h2 className={styles.subtitle}>About Us</h2>
             <h1 className={styles.title}>We create digital ideas that are bigger, bolder, braver and better!</h1>
             <p className={styles.description}>
             We don't just think outside the box, we redefine it. At our agency, we're passionate about crafting digital ideas that push boundaries, break conventions, and leave a lasting impact. We believe in bigger concepts that go beyond the ordinary, bolder approaches that challenge the status quo, braver executions that embrace risk and reward, and better.

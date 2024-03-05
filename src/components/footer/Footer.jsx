@@ -4,11 +4,11 @@ const Footer = () => {
     return (
         <div className={styles.container}>
             <div className={styles.organization}>
-                Gigadev
+                Blogify
             </div>
 
             <div className={styles.copyright}>
-                Giga Creative thoughts agency &#169; All Rights Reserved
+                Blogify&#169; All Rights Reserved
             </div>
         </div>
     )

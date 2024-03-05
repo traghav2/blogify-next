@@ -10,6 +10,6 @@ export const GET = async(request) => {
 
     } catch (error) {
         console.log(error);
-        throw new Error("Faled to fetch posts!")
+        throw new Error("Failed to fetch posts!")
     }
 }
