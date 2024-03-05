@@ -9,7 +9,7 @@ const AboutPage = () => {
             <h2 className={styles.subtitle}>About Us</h2>
             <h1 className={styles.title}>We create digital ideas that are bigger, bolder, braver and better!</h1>
             <p className={styles.description}>
-            We don't just think outside the box, we redefine it. At our agency, we're passionate about crafting digital ideas that push boundaries, break conventions, and leave a lasting impact. We believe in bigger concepts that go beyond the ordinary, bolder approaches that challenge the status quo, braver executions that embrace risk and reward, and better.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem accusamus aliquam tempora iure illo cumque qui, nesciunt molestiae veniam deleniti excepturi, a facere repudiandae, ipsa tempore quisquam quo! Corrupti, nemo!
             </p>
             <div className={styles.boxes}>
                 <div className={styles.box}>
