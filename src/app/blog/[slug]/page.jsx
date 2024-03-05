@@ -1,23 +1,22 @@
 import Image from 'next/image'
 import styles from './singlepost.module.css'
-import { Post } from '../../../lib/models'
-import { connectToDb } from '../../../lib/utils'
 import PostUser from '../../../components/postuser/Postuser';
+import { getPost } from '../../../lib/data';
 
 
 //server action
 
-export const getPost = async (slug) => {
-    "use server"
-    try {
-        connectToDb();
-        console.log(slug)
-        const post = await Post.findOne({ slug })
-        return post;
-    } catch (error) {
-        console.log(error)
-    }
-}
+// export const getPost = async (slug) => {
+//     "use server"
+//     try {
+//         connectToDb();
+//         console.log(slug)
+//         const post = await Post.findOne({ slug })
+//         return post;
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
 
 
 export const generateMetadata = async ({ params }) => {

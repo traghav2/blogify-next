@@ -2,7 +2,7 @@ import PostCard from '../../components/postcard/Postcard';
 import styles from './blog.module.css';
 import { connectToDb } from '../../lib/utils';
 import { Post } from '../../lib/models';
-// import { getPosts } from '../../lib/data';
+import { getPosts } from '../../lib/data';
 
 
 // //FETCH DATA WITH API
@@ -14,19 +14,6 @@ import { Post } from '../../lib/models';
 //     }
 //     throw new Error("Something went Wrong");
 // }
-
-// fetch posts
-
-export const getPosts = async () => {
-    "use server"
-    try {
-        connectToDb();
-        const posts = await Post.find()
-        return posts;
-    } catch (error) {
-        console.log(error)
-    }
-}
 
 const BlogPage = async () => {
 
