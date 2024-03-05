@@ -29,7 +29,7 @@ const Links = () => {
 
                 {session ? (
                     <>
-                        {isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
+                        {isAdmin && <Link href={'/admin'} className={`${pathname === '/admin' && styles.active} ${styles.link}`}>Admin</Link>}
                         <button className={styles.logout}>Logout</button>
                     </>
                 ) : (

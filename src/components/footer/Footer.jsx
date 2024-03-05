@@ -8,7 +8,7 @@ const Footer = () => {
             </div>
 
             <div className={styles.copyright}>
-                Blogify&#169; All Rights Reserved
+                Blogify @ All Rights Reserved
             </div>
         </div>
     )
