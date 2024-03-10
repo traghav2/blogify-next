@@ -1,0 +1,79 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.top{
+    display: flex;
+}
+
+.imageContainer{
+    min-width: 300px;
+    object-fit: contain;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    border-radius: 20px;
+}
+
+.image{
+    width: 300px;
+    border-radius: 20px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.date{
+    font-size: 12px;
+    transform: rotate(270deg);
+    margin: auto;
+}
+
+.title{
+    width: 90%;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.description{
+    font-weight: 300;
+    color: gray;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.link{
+    text-decoration: underline;
+}
+
+.link:hover{
+    text-decoration: underline;
+    text-decoration-color: aqua;
+    color: aqua;
+    transition: 0.3s ease-in-out;
+}
+
+.contentContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonContainer{
+    display: flex;
+    gap: 10px;
+}
+
+.buttonContainer button{
+    padding: 14px 0;
+    width: 80px;
+    cursor: pointer;
+    border: none;
+    border-radius: 13px;
+}
+
+.buttonContainer button:hover{
+    opacity: 0.8;
+    transition: 0.3s ease-in-out;
+}

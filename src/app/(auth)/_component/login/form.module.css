@@ -1,0 +1,122 @@
+.wrapper{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    filter: brightness(1.5);
+    width: 450px;
+    gap: 20px;
+    backdrop-filter: blur(50px);
+    border-radius: 15px;
+}
+
+.logoDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 50;
+}
+
+.googleButton{
+    width: 90%;
+    font-size: 16px;
+    padding: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: white;
+    outline: 2px solid gray;
+    align-self: center;
+}
+
+.googleButton:hover{
+    background-color: rgba(128, 128, 128, 0.47);
+    outline: 2px solid rgba(128, 128, 128, 0.47);
+    transition: 0.2s ease-in-out;
+}
+
+
+.logoText {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+}
+
+
+.googleLogin{
+    display: flex;
+    justify-content: center;
+}
+
+.bottomForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.formButton{
+    width: 40%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+}
+
+.error{
+    align-self: center;
+    color: red;
+    display: flex;
+    height: 25px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    width: 93%;
+}
+
+.formButton:hover{
+    background-color: rgb(110, 26, 121);
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.input{
+    padding: 15px;
+    border-radius: 12px;
+    margin: 10px;
+    border: none;
+    background-color: transparent;
+    outline: 2px solid gray;
+    color: white;
+}
+
+.input:hover{
+    outline: 2px solid rgba(128, 128, 128, 0.47);
+    transition: 0.2 ease-in-out;
+}
+
+.registerLink{
+    align-self: center;
+}
+
+.registerLink span{
+    font-weight: bold;
+}
+
+.registerLink span:hover{
+    color: rgb(110, 26, 121);
+    transition: 0.2s ease-in-out;
+}
+
+
+.formButton{
+
+}
+
+@media (max-width: 475px){
+    .wrapper{
+        width: 350px;
+    }
+}

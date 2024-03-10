@@ -1,0 +1,116 @@
+.container{
+    display: flex;
+    gap: 100px;
+}
+
+.heroImg {
+    filter: grayscale(30%) brightness(80%) contrast(120%) sepia(20%);
+}
+
+.homeTitle{
+    color: aqua;
+}
+
+.textContainer{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.title{
+    font-size: 80px;
+}
+
+.description{
+    font-size: 18px;
+}
+
+.brands{
+    position: relative;
+    height: 50px;
+    width: 500px;
+    filter: grayscale(100%);
+}
+
+.imageContainer{
+    position: relative;
+    flex: 1;
+}
+
+.buttons{
+    display: flex;
+    gap: 12px;
+}
+
+ .learnBtn{
+    min-width: 120px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-size: 16.5px;
+    background-image: linear-gradient(to right, #16222A 0%, #3A6073  51%, #16222A  100%);
+    padding: 15px 30px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;      
+    display: block;
+}
+
+.learnBtn:hover{
+    background-position: right ; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+.button:first-child{
+    background-image: linear-gradient(to right, #52eef7 0%, #1e7075  51%, #00999c  100%);
+    min-width: 120px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    font-size: 16.5px;
+    padding: 15px 30px;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;      
+    display: block;
+}
+.button:first-child:hover{
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+@media (max-width: 1024px) {
+    .container{
+        flex-direction: column;
+        text-align: center;
+    }
+
+
+
+    .buttons{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 475px) {
+    .title{
+        font-size: 60px;
+    }
+
+    .brands{
+        position: relative; 
+        right: 0;
+        left: 0;
+        height: 30px;
+        width: 100%;
+        filter: grayscale(100%);
+    }
+}

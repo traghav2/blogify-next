@@ -79,7 +79,7 @@
         z-index: 10;
         top: 12%;
         right: 40px;
-        height: 20%;
+        height: 25%;
         border-radius: 20px;
         background-color: rgb(0, 0, 0);
         border: 2px solid white;
@@ -89,7 +89,6 @@
         align-items: center;
         gap: 10px;
         justify-content: center;
-        height: calc(100vh-100px);
     }
 }
 

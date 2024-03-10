@@ -2,36 +2,24 @@ import { unstable_noStore } from "next/cache";
 import { Post, User } from "./models";
 import { connectToDb } from "./utils";
 
-export const getPosts = async () => {
+// export const getPosts = async () => {
+//     try {
+//         connectToDb();
+//         const posts = await Post.find();
+//         return posts;
+
+//     } catch (err) {
+//         console.log(err);
+//         throw new Error("Failed to fetch posts");
+//     }
+// }
+
+
+export const getUser = async (username) => {
+    // unstable_noStore();
     try {
         connectToDb();
-        const posts = await Post.find();
-        return posts;
-
-    } catch (err) {
-        console.log(err);
-        throw new Error("Failed to fetch posts");
-    }
-}
-
-export const getPost = async (slug) => {
-    try {
-        connectToDb();
-        const post = await Post.findOne({slug});
-        console.log(post);
-        return post;
-
-    } catch (err) {
-        console.log(err);
-        throw new Error("Failed to fetch post");
-    }
-}
-
-export const getUser = async (id) => {
-    unstable_noStore();
-    try {
-        connectToDb();
-        const user = await User.findById(id);
+        const user = await User.findOne({username});
         return user;
 
     } catch (err) {

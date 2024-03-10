@@ -10,14 +10,22 @@
   },
   "dependencies": {
     "@vercel/speed-insights": "^1.0.10",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "install": "^0.13.0",
     "mongoose": "^8.0.0",
     "next": "^14.1.0",
+    "next-auth": "^5.0.0-beta.3",
+    "npm": "^10.5.0",
+    "openssl": "^2.0.0",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "20.11.17",
     "@types/react": "18.2.55",
+    "@types/react-dom": "^18.2.21",
     "eslint": "^8",
     "eslint-config-next": "14.0.4"
   }
