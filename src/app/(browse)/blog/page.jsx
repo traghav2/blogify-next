@@ -1,4 +1,4 @@
-import PostCard from '../../../components/postcard/PostCard';
+import PostCard from './(postcard)/PostCard';
 import styles from './blog.module.css';
 import { getPosts } from '../../../lib/action';
 

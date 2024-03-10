@@ -3,7 +3,6 @@
 import Link from "next/link"
 
 import styles from './dashboardpostcard.module.css';
-import { usePathname } from "next/navigation";
 import { deletePost } from '../../lib/action';
 
 const DashboardPostCard = ({ image, title, description, _id }) => {
