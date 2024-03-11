@@ -1,13 +1,13 @@
-"use client";
-
 import { createPost } from '../../../lib/action';
 import styles from './create.module.css';
 
+
 const CreatePage = () => {
+
     return (
         <div className={styles.container}>
             <div className={styles.imageContainer}>
-                <img src="/contact.png" alt='contact' fill="true" className={styles.img}/>
+                <img src="/contact.png" alt='contact' fill="true" className={styles.img} />
             </div>
 
             <div className={styles.formContainer}>

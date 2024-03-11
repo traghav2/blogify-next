@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.blogContainer {
+    display: flex;
+    gap: 40px;
+}
+
+.commentContainer {
+    border-radius: 20px;
+    padding:20px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: rgb(99, 99, 99);
+}
+
+.commentContainer h3 {
+    font-size: 25px;
+}
+
+.commentContainer p {
+    align-self: center;
+}
+
+

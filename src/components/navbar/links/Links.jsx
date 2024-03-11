@@ -46,6 +46,7 @@ const Links = ({session}) => {
                     <Link onClick={handleOpenChange} href={'/about'} className={`${pathname === '/about' && styles.mobActive} ${styles.link}`}>About</Link>
                     <Link onClick={handleOpenChange} href={'/create'} className={`${pathname === '/create' && styles.mobActive} ${styles.link}`}>Create</Link>
                     <Link onClick={handleOpenChange} href={'/blog'} className={`${pathname === '/blog' && styles.mobActive} ${styles.link}`}>Blog</Link>
+                    <Link href={'/dashboard'} className={`${pathname === '/dashboard' && styles.active} ${styles.link}`}>Dashboard</Link>
                     {session?.user ? (
                     <>
                         {session.user?.isAdmin && <Link href={'/admin'} className={`${pathname === '/admin' && styles.mobActive} ${styles.link}`}>Admin</Link>}

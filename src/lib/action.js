@@ -96,18 +96,33 @@ export const createPost = async (formdata) => {
         connectToDb();
         const {imageUrl, blogTitle, blogDescription} = Object.fromEntries(formdata);
         const session = await auth();
-    
+
+        if(session.user){
             const newPost = new Post({
-            image: imageUrl,
-            title: blogTitle,
-            description: blogDescription,
-            username: session.user.name,
-        })
-    
-        await newPost.save();
-        revalidatePath("/blog");
+                image: imageUrl,
+                title: blogTitle,
+                description: blogDescription,
+                username: session.user.name,
+            })
+        
+            await newPost.save();
+            revalidatePath("/blog");
+        }
+        
+
     } catch (error) {
         console.log(error)
+    }
+}
+
+export const updatePost = async (_id, description) => {
+    try {
+        connectToDb();
+        await Post.updateOne({_id}, {$set: {description: description}});
+        return {status: "success"};
+
+    } catch (error) {
+        console.log(error);
     }
 }
 

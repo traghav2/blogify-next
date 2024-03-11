@@ -11,10 +11,34 @@
     .post{
         width: 45%;
     }
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+    }
 }
 
 @media screen and (max-width: 768px) {
     .post{
-        width: 100%;
+        width: 60%;
+        align-self: center;
+    }
+
+    .container{
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .post{
+        width: 40%;
+        margin-left: 40px;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr); 
     }
 }

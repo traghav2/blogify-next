@@ -34,6 +34,14 @@ export const authConfig = {
             const isOnLoginPage = request.nextUrl?.pathname.startsWith("/login");
             const isOnRegisterPage = request.nextUrl?.pathname.startsWith("/register");
             const isOnDashBoardPage = request.nextUrl?.pathname.startsWith("/dashboard");
+            const isOnCreatePage = request.nextUrl?.pathname.startsWith("/create");
+
+            //CREATE PAGE CHECK
+
+            if(isOnCreatePage && !user){;
+                return false;
+            }
+
 
             //DASHBOARD PAGE CHECK
 

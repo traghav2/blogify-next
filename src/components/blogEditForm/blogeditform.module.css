@@ -1,0 +1,56 @@
+.imageContainer {
+    flex: 1;
+    position: relative;
+    height: calc(100vh - 95px);
+}
+
+.blogContainer {
+    display: flex;
+    gap: 40px;
+}
+
+
+.image {
+    height: 100%;
+    max-width: 450px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 50px;
+}
+
+.title {
+    font-size: 64px;
+}
+
+.image {
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+
+.content {
+    background-color: transparent;
+    border: 2px solid gray;
+    color: white;
+    height: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    max-width: 100%;
+}
+
+.updateButton{
+    border-radius: 15px;
+    padding: 10px;
+}
+
+
+@media (max-width: 1280px) {
+    .imageContainer {
+        display: none;
+    }
+}

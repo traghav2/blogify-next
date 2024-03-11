@@ -8,8 +8,9 @@ import { deletePost } from '../../lib/action';
 const DashboardPostCard = ({ image, title, description, _id }) => {
 
 
+
     return (
-        <div className={styles.container}>
+        <>
 
             <div className={styles.contentContainer}>
                 <div className={styles.top}>
@@ -24,17 +25,15 @@ const DashboardPostCard = ({ image, title, description, _id }) => {
                     <p className={styles.description}>{description}</p>
                     <Link className={styles.link} href={`/blog/${_id}`}>Read More</Link>
                 </div>
-            </div>
 
-            <div className={styles.buttonContainer}>
-                <button className={styles.editButton}>
-                    Edit
-                </button>
-                <button onClick={() => deletePost(_id)} className={styles.deleteButton}>
-                    Delete
-                </button>
+                <div className={styles.buttonContainer}>
+                    <Link href={`/blog/edit/${_id}`}><button className={styles.editButton}>Edit</button></Link>
+                    <button onClick={() => deletePost(_id)} className={styles.deleteButton}>
+                        Delete
+                    </button>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
