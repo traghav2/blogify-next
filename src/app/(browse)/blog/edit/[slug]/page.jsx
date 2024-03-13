@@ -15,7 +15,6 @@ export const generateMetadata = async ({ params }) => {
 
 
 const EditPostPage = async ({ params }) => {
-    const session = await auth();
     const post = await getPost(params.slug);
 
     return (

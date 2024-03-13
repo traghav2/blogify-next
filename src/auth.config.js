@@ -41,7 +41,7 @@ export const authConfig = {
 
             //CREATE PAGE CHECK
 
-            if(isOnCreatePage && !user){;
+            if(isOnCreatePage && !user){
                 return false;
             }
 

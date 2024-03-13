@@ -25,7 +25,7 @@ const LoginForm = () => {
                 <input className={styles.input} type="text" placeholder="Password" name="password" />
                 <button className={styles.formButton}>Login</button>
             </form>
-            <p className={styles.registerLink}>Don't have an account? <Link href="/register"><span>Register here</span></Link></p>
+            <p className={styles.registerLink}>Don&apos;t have an account? <Link href="/register"><span>Register here</span></Link></p>
         </div>
     )
 }

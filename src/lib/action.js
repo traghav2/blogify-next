@@ -93,7 +93,7 @@ export const createPost = async (formdata) => {
         const session = await auth();
 
         if (session.user) {
-            await prisma.post.create({
+            await db.post.create({
                 data: {
                     image: imageUrl,
                     title: blogTitle,
