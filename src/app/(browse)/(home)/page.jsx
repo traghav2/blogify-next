@@ -8,7 +8,7 @@ const Home = () => {
       <div className={styles.textContainer}>
         <h1 className={styles.title}>Welcome to <span className={styles.homeTitle}>Blogify</span></h1>
         <p className={styles.description}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Share your ideas and stories on a beautifully designed platform built for exceptional user experience.
         </p>
 
         <div className={styles.buttons}>
