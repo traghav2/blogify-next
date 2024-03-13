@@ -5,7 +5,7 @@ import Link from "next/link"
 import styles from './dashboardpostcard.module.css';
 import { deletePost } from '../../lib/action';
 
-const DashboardPostCard = ({ image, title, description, _id }) => {
+const DashboardPostCard = ({ image, title, description, id }) => {
 
 
 
@@ -23,12 +23,12 @@ const DashboardPostCard = ({ image, title, description, _id }) => {
                 <div className={styles.bottom}>
                     <h1 className={styles.title}>{title}</h1>
                     <p className={styles.description}>{description}</p>
-                    <Link className={styles.link} href={`/blog/${_id}`}>Read More</Link>
+                    <Link className={styles.link} href={`/blog/${id}`}>Read More</Link>
                 </div>
 
                 <div className={styles.buttonContainer}>
-                    <Link href={`/blog/edit/${_id}`}><button className={styles.editButton}>Edit</button></Link>
-                    <button onClick={() => deletePost(_id)} className={styles.deleteButton}>
+                    <Link href={`/blog/edit/${id}`}><button className={styles.editButton}>Edit</button></Link>
+                    <button onClick={() => deletePost(id)} className={styles.deleteButton}>
                         Delete
                     </button>
                 </div>

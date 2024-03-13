@@ -20,7 +20,7 @@ const Dashboard = async () => {
                             image={post.image}
                             title={post.title}
                             description={post.description}
-                            _id={post._id}
+                            id={post.id}
                         />
                     </div>)
                 ))}

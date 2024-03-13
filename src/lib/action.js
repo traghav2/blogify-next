@@ -1,89 +1,85 @@
-"use server"
+"use server";
 import { auth, signIn, signOut } from "../lib/auth";
-import { User } from "./models";
 import bcrypt from "bcryptjs";
-import { connectToDb } from "./utils";
 import { revalidatePath } from "next/cache";
-// import { getUser } from "./data";
-import { Post } from '../lib/models';
-// import { getUser } from "./data";
+import { getUserbyUsername } from "../lib/userService";
+import { db } from "./db";
 
 export const handleGoogleLogin = async () => {
     await signIn("google");
-}
+};
 
 export const handleLogout = async () => {
     await signOut();
-}
+};
 
 export const register = async (previousState, formdata) => {
-    const { username, email, password, confirmPassword } = Object.fromEntries(formdata);
-
+    const { username, email, password, confirmPassword } =
+        Object.fromEntries(formdata);
 
     if (password !== confirmPassword) {
-        return {error: "Passwords do not match!"};
+        return { error: "Passwords do not match!" };
     }
 
     try {
-        connectToDb();
-        const user = await User.findOne({ username });
+        const user = await getUserbyUsername(username);
 
         if (user) {
-            return {error: "User already exists"};
+            return { error: "User already exists" };
         }
 
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
-        
 
-        const newUser = new User({
-            username,
-            email,
-            password:hashedPassword,
-        })
+        await db.user.create({
+            data: {
+                username,
+                email,
+                password: hashedPassword,
+            },
+        });
 
-        await newUser.save();
-        return {success: true};
+        return { success: true };
     } catch (error) {
-        console.log(error)
+        console.log(error);
         return { error: "Something went wrong" };
     }
-}
+};
 
-export const login = async (previousState ,formdata) => {
+export const login = async (previousState, formdata) => {
     const { username, password } = Object.fromEntries(formdata);
 
     try {
-        await signIn("credentials", {username, password});
-        
+        await signIn("credentials", { username, password });
     } catch (error) {
-        if(error.message.includes("CredentialsSignin")){
-            return {error: "Invalid Username or Password"}
+        if (error.message.includes("CredentialsSignin")) {
+            return { error: "Invalid Username or Password" };
         }
-    }finally{
-        revalidatePath('/login');
+    } finally {
+        revalidatePath("/login");
     }
-}
+};
 
 export const getPosts = async () => {
     try {
-        connectToDb();
-        const posts = await Post.find();
-        if(posts){
+        const posts = db.post.findMany();
+        if (posts) {
             return posts;
         }
     } catch (error) {
         console.log(error);
     }
 
-}   
+}
 
-export const getPost = async(slug) => {
+export const getPost = async (slug) => {
     try {
-        connectToDb();
-        const post = await Post.findOne({_id: slug});
-    
-        if(post){
+        const post = await db.post.findUnique({
+            where: { id: slug }, // Assuming 'slug' is a unique field in your Post model
+        });
+
+
+        if (post) {
             return post;
         }
     } catch (error) {
@@ -93,42 +89,46 @@ export const getPost = async(slug) => {
 
 export const createPost = async (formdata) => {
     try {
-        connectToDb();
-        const {imageUrl, blogTitle, blogDescription} = Object.fromEntries(formdata);
+        const { imageUrl, blogTitle, blogDescription } = Object.fromEntries(formdata);
         const session = await auth();
 
-        if(session.user){
-            const newPost = new Post({
-                image: imageUrl,
-                title: blogTitle,
-                description: blogDescription,
-                username: session.user.name,
-            })
-        
-            await newPost.save();
+        if (session.user) {
+            await prisma.post.create({
+                data: {
+                    image: imageUrl,
+                    title: blogTitle,
+                    description: blogDescription,
+                    username: session.user.name,
+                },
+            });
             revalidatePath("/blog");
         }
-        
 
     } catch (error) {
         console.log(error)
     }
 }
 
-export const updatePost = async (_id, description) => {
+export const updatePost = async (id, description) => {
     try {
-        connectToDb();
-        await Post.updateOne({_id}, {$set: {description: description}});
-        return {status: "success"};
+        await db.post.update({
+            where: { id },
+            data: {
+                description,
+            },
+        });
+        return { status: "success" };
 
     } catch (error) {
         console.log(error);
     }
 }
 
-export const deletePost = async (_id) => {
+export const deletePost = async (id) => {
     try {
-        await Post.findByIdAndDelete(_id);
+        await db.post.delete({
+            where: { id },
+        });
         revalidatePath("/dashboard");
     } catch (error) {
         console.log(error);

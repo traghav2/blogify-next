@@ -24,7 +24,7 @@ const EditPostPage = async ({ params }) => {
                 image = {post.image}
                 title = {post.title}
                 description = {post.description}
-                _id = {post.id.toString()}
+                id = {post.id.toString()}
             />
         </div>
     )

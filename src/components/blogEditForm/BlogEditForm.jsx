@@ -4,7 +4,7 @@ import { useState } from 'react';
 import styles from './blogeditform.module.css';
 import { updatePost } from '../../lib/action';
 
-const BlogEditForm = ({ image, title, description, _id }) => {
+const BlogEditForm = ({ image, title, description, id }) => {
 
     const [descriptionstate, setDescriptionstate] = useState(description);
     const [status, setStatus] = useState(false);
@@ -14,7 +14,7 @@ const BlogEditForm = ({ image, title, description, _id }) => {
     }
 
     function handleUpdatePost(){
-        const status = updatePost(_id, descriptionstate);
+        const status = updatePost(id, descriptionstate);
         if(status === "success"){
             setStatus(true);
             alert("Post Updated Successfully!");

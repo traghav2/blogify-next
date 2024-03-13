@@ -1,4 +1,5 @@
-import { User } from "./lib/models";
+import { db } from "./lib/db";
+
 
 export const authConfig = {
     pages: {
@@ -9,7 +10,9 @@ export const authConfig = {
         async jwt({ token, user }) {
             if (user) {
                 const email = user.email;
-                const foundUser = await User.findOne({email});
+                const foundUser = await db.user.findUnique({
+                    where: { email: email },
+                });
 
                 if(foundUser){
                     token.name = foundUser.username;

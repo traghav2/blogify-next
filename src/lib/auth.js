@@ -1,24 +1,24 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { connectToDb } from "./utils";
-import { User } from "./models";
+import { db } from "./db";
 import bcrypt from "bcryptjs";
 import { authConfig } from '../auth.config';
 
 const login = async (credentials) => {
     try {
-        connectToDb();
         // console.log(credentials.password);
-        const user = await User.findOne({username: credentials.username});
+        const user = await db.user.findUnique({
+            where: { username: credentials.username },
+        });
 
-        if(!user){
+        if (!user) {
             throw new Error("Wrong Credentials!")
         }
 
-        const isPasswordCorrect = await bcrypt.compare(credentials.password,user.password);
+        const isPasswordCorrect = await bcrypt.compare(credentials.password, user.password);
 
-        if(!isPasswordCorrect){
+        if (!isPasswordCorrect) {
             throw new Error('Wrong Credentials');
         }
 
@@ -48,19 +48,22 @@ export const { handlers: { GET, POST }, auth, signIn, signOut } = NextAuth({
         })
     ],
     callbacks: {
-        async signIn({user, account, profile}){
-            if(account.provider === "google"){
-                connectToDb();
+        async signIn({ user, account, profile }) {
+            if (account.provider === "google") {
                 try {
-                    const user = await User.findOne({email: profile.email});
-                    if(!user){
-                        const newUser = new User({
-                            username: profile.name,
-                            email: profile.email,
-                            image: profile.picture,
-                        });
+                    const user = await db.user.findUnique({
+                        where: { email: profile.email },
+                    });
 
-                        await newUser.save();
+                    if (!user) {
+
+                        await db.user.create({
+                            data: {
+                                username: profile.name,
+                                email: profile.email,
+                                image: profile.picture,
+                            },
+                        });
                     }
                 } catch (error) {
                     console.log(error)
