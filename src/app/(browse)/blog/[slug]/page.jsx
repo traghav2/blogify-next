@@ -43,11 +43,7 @@ const SinglePostPage = async ({ params }) => {
             </div>
 
             <div className={styles.commentContainer}>
-                <h3>
-                    Comments
-                </h3>
 
-                <p>Empty</p>
             </div>
         </div>
     )

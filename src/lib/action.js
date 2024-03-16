@@ -1,4 +1,5 @@
 "use server";
+
 import { auth, signIn, signOut } from "../lib/auth";
 import bcrypt from "bcryptjs";
 import { revalidatePath } from "next/cache";
@@ -133,4 +134,8 @@ export const deletePost = async (id) => {
     } catch (error) {
         console.log(error);
     }
+}
+
+export const commentPost = async (comment) => {
+
 }
