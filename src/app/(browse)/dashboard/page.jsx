@@ -6,7 +6,6 @@ import styles from './dashboard.module.css';
 
 const Dashboard = async () => {
 
-
     const posts = await getPosts();
     const session = await auth();
 

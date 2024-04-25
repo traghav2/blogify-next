@@ -1,0 +1,41 @@
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.innerContainer{
+    background-color: rgb(50, 49, 49);
+    padding: 15px;
+    border-radius: 20px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 13px;
+}
+
+.innerContainer p{
+    background-color: rgb(97, 97, 97);
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.deleteButton{
+    width: 100px;
+    padding: 8px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.deleteButton:hover{
+    color: white;
+    background-color: red;
+    transition: 0.3s ease-in-out;
+}

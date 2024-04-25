@@ -1,6 +1,10 @@
 .container{
     display: flex;
     gap: 100px;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .heroImg {
@@ -35,7 +39,7 @@
 
 .imageContainer{
     position: relative;
-    flex: 1;
+    flex: 0.6;
 }
 
 .buttons{
@@ -89,15 +93,15 @@
 
 @media (max-width: 1024px) {
     .container{
+        height: 100%;
         flex-direction: column;
         text-align: center;
+        justify-content: center;
     }
 
-    .image{
+    .heroImg{
         display: none;
     }
-
-
 
     .buttons{
         justify-content: center;

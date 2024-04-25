@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 25px;
+    filter: opacity(0.9);
+    transition: 2s ease-in-out;
+}
+
+.summaryContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.summaryContainer h2{
+    font-weight: 500;
+}
+
+.summaryToggleIcon:hover {
+    background-color: rgba(206, 206, 206, 0.639);
+    border-radius: 30px;
+    padding: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.summaryContent{
+    padding: 20px;
+    margin-top: 15px;
+    padding-left: 40px;
+    border-radius: 8px;
+    color: white;
+    outline: 1px solid white;
+}
+
+.summaryContent ul li{
+    margin: 20px 0;
+}
+
+.summaryToggleIcon:active {
+    transform: rotate(90deg);
+    transition: 0.2s ease-in-out;
+}

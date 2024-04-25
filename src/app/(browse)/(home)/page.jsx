@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './home.module.css';
 import Link from 'next/link';
+import { run } from '../../../lib/ai';
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
       </div>
 
       <div className={styles.imageContainer}>
-        <Image  priority src="/hero.gif" fill="true" alt='hero-image' className={styles.heroImg} />
+        <Image priority src="/hero.gif" alt='hero-image' height={300} width={400} className={styles.heroImg} />
       </div>
     </div>
   )

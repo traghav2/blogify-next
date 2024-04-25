@@ -1,0 +1,106 @@
+.profilePic{
+    border-radius: 30px;
+}
+
+.profile{
+    display: flex;
+    gap: 10px;
+}
+.replyContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comment{
+    margin-left: 50px;
+    width: 90%;
+    font-size: 14px;
+    color: rgb(184, 184, 184);
+}
+
+.replyToggle{
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.replyToggle:hover{
+    transition: 0.3s ease-in-out;
+    background-color: rgba(128, 128, 128, 0.578);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.container{
+    display: flex;
+    word-break: break-all;
+    flex-direction: column;
+    background-color: rgb(28, 28, 28);
+    border-radius: 20px;
+    padding: 20px;
+    gap: 5px;
+}
+
+.trash{
+    cursor: pointer;
+}
+
+.trash:hover{
+    color: red;
+    transition: 0.2s ease-in-out;
+}
+
+.disabled{
+    display: none;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+
+.date{
+    font-size: 11px;
+    color: gray;
+    
+}
+
+.replyForm{
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.replyUserImage{
+    border-radius: 20px;
+}
+
+.input{
+    width: 80%;
+    padding: 8px;
+    outline: 1px solid white;
+    border: none;
+    border-radius: 7px;
+    background-color: transparent;
+    color: white;
+}
+
+.submitButton{
+    border-radius: 7px;
+    outline: 1px solid white;
+    padding: 8px;
+    border: none;
+}
+
+.replyCommentsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.replyComments{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}

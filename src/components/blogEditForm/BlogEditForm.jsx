@@ -1,30 +1,29 @@
 "use client"
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './blogeditform.module.css';
 import { updatePost } from '../../lib/action';
+import Image from 'next/image';
 
 const BlogEditForm = ({ image, title, description, _id }) => {
 
     const [descriptionstate, setDescriptionstate] = useState(description);
-    const [status, setStatus] = useState(false);
+    const router = useRouter();
 
     function handleOnchange(event) {
         setDescriptionstate(event.target.value);
     }
 
-    function handleUpdatePost(){
-        const status = updatePost(_id, descriptionstate);
-        if(status === "success"){
-            setStatus(true);
-            alert("Post Updated Successfully!");
-        }
+    async function handleUpdatePost(){
+        await updatePost(_id, descriptionstate);
+        router.push(`/blog/${_id}`);
     }
     return (
         <>
             <div className={styles.blogContainer}>
                 <div className={styles.imageContainer}>
-                    <img className={styles.image} src={image} alt='post-image' fill="true" />
+                    <Image className={styles.image} src={image} alt='post-image' fill="true" />
                 </div>
 
                 <div className={styles.textContainer}>

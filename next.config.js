@@ -1,8 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     reactStrictMode: true,
-    images : {
-        domains: ['www.pexels.com', 'images.pexels.com', "lh3.googleusercontent.com"]
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "**",
+            },
+        ],
     }
 }
 

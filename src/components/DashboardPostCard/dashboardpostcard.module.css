@@ -13,9 +13,7 @@
 }
 
 .image{
-    width: 300px;
     border-radius: 20px;
-    height: 400px;
     object-fit: cover;
 }
 
@@ -69,8 +67,7 @@
 }
 
 .deleteButton{
-    background-color: red;
-    color: white;
+    background-color: red;;
 }
 
 .buttonContainer button:hover{

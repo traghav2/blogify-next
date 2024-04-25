@@ -1,4 +1,5 @@
 import styles from './footer.module.css'
+import GeminiAI from '../gemini/GeminiAI';
 
 const Footer = () => {
     return (
@@ -6,7 +7,6 @@ const Footer = () => {
             <div className={styles.organization}>
                 Blogify
             </div>
-
             <div className={styles.copyright}>
                 Blogify @ All Rights Reserved
             </div>

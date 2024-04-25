@@ -1,4 +1,3 @@
-import { auth } from '../../../../../lib/auth';
 import { getPost } from '../../../../../lib/action';
 import styles from './singlepost.module.css'
 import BlogEditForm from '../../../../../components/blogEditForm/BlogEditForm';
@@ -15,7 +14,6 @@ export const generateMetadata = async ({ params }) => {
 
 
 const EditPostPage = async ({ params }) => {
-    const session = await auth();
     const post = await getPost(params.slug);
 
     return (

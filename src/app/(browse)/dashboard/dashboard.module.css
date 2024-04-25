@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    height: 100%;
 }
 
 .post{
@@ -23,7 +24,7 @@
     }
 
     .container{
-        justify-content: start;
+        justify-content: flex-start;
         display: flex;
         gap: 100px;
         flex-wrap: wrap;
@@ -51,7 +52,7 @@
     }
 
     .container{
-        justify-content: start;
+        justify-content: flex-start;
         display: flex;
         flex-wrap: wrap;
     }

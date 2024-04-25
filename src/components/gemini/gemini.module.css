@@ -1,0 +1,91 @@
+.floatingButton {
+    background: #780206;
+    background: -webkit-linear-gradient(to right, #0a1a93, #a90309);
+    background: linear-gradient(to right, #0a1a93, #a90309);
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 10%;
+    border-radius: 30px;
+    width: 55px;
+    align-self: center; 
+    margin-left: 40px;
+    padding: 8px 10px;
+}
+
+.responseContainer ul{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.floatingButton:hover {
+    opacity: 0.8;
+    transition: 0.2s ease-in-out;
+}
+
+.aiIcon {
+    color: rgb(255, 255, 255);
+}
+
+.chatBotContainer {
+    display: flex;
+    flex-direction: column;
+    background: #780206;
+    background: -webkit-linear-gradient(to right, #060f59, #5e0205);
+    background: linear-gradient(to right, #333752, #714647);
+    padding: 20px;
+    width: 400px;
+    position: absolute;
+    top: 120px;
+    right: 130px;
+    word-break: break-all;
+    margin-bottom: 15px;
+    height: 450px;
+    margin-left: 40px;
+    border-radius: 40px;
+}
+
+.prompts{
+    padding: 10px;
+    margin-left: 20px;
+}
+
+.prompts button{
+    padding: 5px 8px;
+    background-color: transparent;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    outline: 1px solid white;
+    cursor: pointer;
+}
+
+.prompts button:hover{
+    background-color: rgba(185, 185, 185, 0.587);
+    transition: 0.2s ease-in-out;
+}
+
+.geminiIntro{
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 1024px) {
+    .floatingButton{
+        position: absolute;
+        top: 30px;
+        right: 47%;
+    }
+}
+
+@media (max-width: 640px) {
+    .chatBotContainer{
+        top: 120px;
+        width: 300px;
+        left: 10px;
+        right: 10%;
+    }
+}

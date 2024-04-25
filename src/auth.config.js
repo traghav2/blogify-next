@@ -9,9 +9,9 @@ export const authConfig = {
         async jwt({ token, user }) {
             if (user) {
                 const email = user.email;
-                const foundUser = await User.findOne({email});
+                const foundUser = await User.findOne({ email });
 
-                if(foundUser){
+                if (foundUser) {
                     token.name = foundUser.username;
                     token.email = foundUser.email;
                     token.isAdmin = foundUser.isAdmin;
@@ -35,33 +35,47 @@ export const authConfig = {
             const isOnRegisterPage = request.nextUrl?.pathname.startsWith("/register");
             const isOnDashBoardPage = request.nextUrl?.pathname.startsWith("/dashboard");
             const isOnCreatePage = request.nextUrl?.pathname.startsWith("/create");
+            const isOnFeedbackPage = request.nextUrl?.pathname.startsWith("/feedback");
+            const isOnProfilePage = request.nextUrl?.pathname.startsWith("/profile");
 
             //CREATE PAGE CHECK
 
-            if(isOnCreatePage && !user){;
+            if (isOnCreatePage && !user) {
+                return false;
+            }
+
+            //FEEDBACK PAGE CHECK
+
+            if (isOnFeedbackPage && !user) {
+                return false;
+            }
+
+            //PROFILE PAGE CHECK
+
+            if (isOnProfilePage && !user) {
                 return false;
             }
 
 
             //DASHBOARD PAGE CHECK
 
-            if(isOnDashBoardPage && !user){
+            if (isOnDashBoardPage && !user) {
                 return false;
             }
 
             //ADMIN REACHING ADMIN DASHBOARD
 
-            if(isOnAdminPage && !user?.isAdmin){
+            if (isOnAdminPage && !user?.isAdmin) {
                 return false;
             }
 
             //UNAUTHENTICATED USER CAN REACH LOGIN PAGE
 
-            if(isOnLoginPage && user){
+            if (isOnLoginPage && user) {
                 return Response.redirect(new URL("/", request.nextUrl));
             }
 
-            if(isOnRegisterPage && user){
+            if (isOnRegisterPage && user) {
                 return Response.redirect(new URL("/", request.nextUrl));
             }
 

@@ -1,0 +1,28 @@
+.container{
+    width: 100%;
+    padding: 10px;
+    margin-left: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.profile{
+    display: flex;
+    gap: 8px;
+}
+
+.date{
+    font-size: 11px;
+    color: gray;
+}
+
+.profilePic{
+    border-radius: 20px;
+}
+
+.comment{
+    color: rgb(198, 198, 198);
+    font-size: 14px;
+    margin-left: 35px;
+}

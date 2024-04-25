@@ -10,11 +10,12 @@
 }
 
 .img{
-    max-width: 90%;
     border-radius: 10px;
     margin: 0 20px;
-    height: 100%;
+}
 
+.blogdesc{
+    resize: none;
 }
 
 .formContainer{
@@ -38,10 +39,11 @@
 }
 
 .form button{
-    padding: 15px;
+    padding: 8px;
     background-color: var(--btn);
     color: black;
     font-weight: bold;
+    width: 100px;
     font-size: 16px;
     border: none;
     border-radius: 10px;

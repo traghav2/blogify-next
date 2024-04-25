@@ -39,3 +39,11 @@ export const getUsers = async (id) => {
         throw new Error("Failed to fetch users");
     }
 }
+
+export const commentPost = async (commment) => {
+    try {
+        
+    } catch (error) {
+        console.log(error);
+    }
+}

@@ -1,0 +1,25 @@
+.profilePic{
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.profilePic:hover{
+    outline: 2px solid white;
+    transition: 0.2s ease-in-out;
+}
+
+.profilePopUp{
+    background-color: rgb(31, 31, 31);
+    height: 100px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    top: 85%;
+}

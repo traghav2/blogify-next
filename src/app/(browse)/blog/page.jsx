@@ -6,10 +6,11 @@ import { getPosts } from '../../../lib/action';
 const BlogPage = async () => {
 
     const posts = await getPosts();
+    const postCount = posts.length;
 
     return (
         <div className={styles.container}>
-            {posts.map((post) => (
+            {postCount < 1 ? <h1 className={styles.para}>No Blogs Uploaded</h1> : posts.map((post) => (
                 <div className={styles.post} key={post.id}>
                     <PostCard post={post} />
                 </div>

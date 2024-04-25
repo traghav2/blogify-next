@@ -1,6 +1,12 @@
-import { getPost } from '../../../../lib/action';
+import { getComments, getPost } from '../../../../lib/action';
 import styles from './singlepost.module.css'
 import PostUser from '../../../../components/postuser/Postuser';
+import Image from 'next/image';
+import CommentForm from '../../../../components/commentForm/CommentForm';
+import CommentCard from '../../../../components/commentCard/CommentCard';
+import moment from 'moment';
+import { auth } from '../../../../lib/auth';
+import Summary from '../../../../components/summaryCard/summary';
 
 
 export const generateMetadata = async ({ params }) => {
@@ -15,12 +21,18 @@ export const generateMetadata = async ({ params }) => {
 
 const SinglePostPage = async ({ params }) => {
     const post = await getPost(params.slug);
+    const mongodate = post.createdAt;
+    const date = new Date(mongodate);
+    const formattedDate = moment(date).format('DD.MM.YYYY')
+    const comments = await getComments(post._id.toString());
+    const session = await auth();
 
     return (
         <div className={styles.container}>
+            <Summary postDescription = {post.description} />
             <div className={styles.blogContainer}>
                 <div className={styles.imageContainer}>
-                    <img className={styles.image} src={post.image} alt='' fill />
+                    <Image className={styles.image} src={post.image} alt='blog-image' fill />
                 </div>
 
                 <div className={styles.textContainer}>
@@ -32,7 +44,7 @@ const SinglePostPage = async ({ params }) => {
 
                         <div className={styles.detailText}>
                             <span className={styles.detailTitle}>Published</span>
-                            <span className={styles.detailValue}>01.01.2024</span>
+                            <span className={styles.detailValue}>{formattedDate}</span>
                         </div>
                     </div>
 
@@ -43,11 +55,32 @@ const SinglePostPage = async ({ params }) => {
             </div>
 
             <div className={styles.commentContainer}>
-                <h3>
-                    Comments
-                </h3>
+                <CommentForm postId={post._id.toString()} />
 
-                <p>Empty</p>
+                <div className={styles.comments}>
+                    {comments.map(async (comment) => {
+                        const dateTime = new Date(comment.createdAt);
+                        const customFormat = "HH:mm";
+                        const formattedDate = moment(dateTime).format(customFormat);
+
+
+                        return (
+                            <CommentCard
+                                sessionUserImage = {session.user.image}
+                                sessionUserName = {session.user.name}
+                                commentId={comment._id.toString()}
+                                replies = {JSON.stringify(comment.replies)}
+                                formattedDate={formattedDate}
+                                comment={comment.comment}
+                                image={comment.displayPic}
+                                username={comment.username}
+                                likes={comment.likes}
+                                dislikes={comment.dislikes}
+                                createdAt={comment.createdAt}
+                                key={comment._id} />
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )

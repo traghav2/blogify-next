@@ -14,7 +14,6 @@ const Links = ({session}) => {
 
     function handleOpenChange() {
         setOpen((prev) => !prev);
-        console.log(open);
     }
 
     return (
@@ -38,15 +37,16 @@ const Links = ({session}) => {
                 )}
             </div>
             <div className={styles.mobileNav}>
-                <Link href='/'><Image className={styles.mobileLogo} src='/logo.png' alt="" height={30} width={30} /></Link>
+
                 <Image className={styles.menuButton} src='/menu.png' alt="" height={30} width={30} onClick={handleOpenChange} />
             </div>
             {open && (
                 <div className={styles.mobileLinks}>
-                    <Link onClick={handleOpenChange} href={'/about'} className={`${pathname === '/about' && styles.mobActive} ${styles.link}`}>About</Link>
-                    <Link onClick={handleOpenChange} href={'/create'} className={`${pathname === '/create' && styles.mobActive} ${styles.link}`}>Create</Link>
-                    <Link onClick={handleOpenChange} href={'/blog'} className={`${pathname === '/blog' && styles.mobActive} ${styles.link}`}>Blog</Link>
-                    <Link href={'/dashboard'} className={`${pathname === '/dashboard' && styles.active} ${styles.link}`}>Dashboard</Link>
+                    <Link onClick={handleOpenChange} href='/'><Image className={styles.mobileLogo} src='/logo.png' alt="site-logo" height={60} width={60} /></Link>
+                    <Link onClick={handleOpenChange} href={'/about'} className={`${pathname === '/about' && styles.active} ${styles.link}`}>About</Link>
+                    <Link onClick={handleOpenChange} href={'/create'} className={`${pathname === '/create' && styles.active} ${styles.link}`}>Create</Link>
+                    <Link onClick={handleOpenChange} href={'/blog'} className={`${pathname === '/blog' && styles.active} ${styles.link}`}>Blog</Link>
+                    <Link onClick={handleOpenChange} href={'/dashboard'} className={`${pathname === '/dashboard' && styles.active} ${styles.link}`}>Dashboard</Link>
                     {session?.user ? (
                     <>
                         {session.user?.isAdmin && <Link href={'/admin'} className={`${pathname === '/admin' && styles.mobActive} ${styles.link}`}>Admin</Link>}
