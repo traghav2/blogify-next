@@ -55,7 +55,7 @@ const SinglePostPage = async ({ params }) => {
             </div>
 
             <div className={styles.commentContainer}>
-                <CommentForm postId={post._id.toString()} />
+                <CommentForm session={session} postId={post._id.toString()} />
 
                 <div className={styles.comments}>
                     {comments.map(async (comment) => {
@@ -66,8 +66,8 @@ const SinglePostPage = async ({ params }) => {
 
                         return (
                             <CommentCard
-                                sessionUserImage = {session.user.image}
-                                sessionUserName = {session.user.name}
+                                sessionUserImage = {session?.user?.image}
+                                sessionUserName = {session?.user?.name}
                                 commentId={comment._id.toString()}
                                 replies = {JSON.stringify(comment.replies)}
                                 formattedDate={formattedDate}

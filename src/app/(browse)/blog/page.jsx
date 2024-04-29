@@ -6,7 +6,7 @@ import { getPosts } from '../../../lib/action';
 const BlogPage = async () => {
 
     const posts = await getPosts();
-    const postCount = posts.length;
+    const postCount = posts?.length;
 
     return (
         <div className={styles.container}>

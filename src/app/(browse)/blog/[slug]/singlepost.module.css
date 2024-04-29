@@ -87,8 +87,17 @@
 .content {
     font-size: 18px;
     letter-spacing: 1.5px;
-    line-height: 23px;
+    line-height: 35px;
+    white-space: pre-wrap;
+    height: 400px;
+    outline: 2px gray solid;
+    padding: 15px;
+    border-radius: 12px;
+    overflow-y: scroll;
+    scrollbar-width: none;
 }
+
+
 
 @media (max-width: 1280px) {
     .imageContainer {

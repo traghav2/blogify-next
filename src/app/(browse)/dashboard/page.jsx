@@ -20,6 +20,7 @@ const Dashboard = async () => {
                             title={post.title}
                             description={post.description}
                             _id={post._id}
+                            createdAt={post.createdAt}
                         />
                     </div>)
                 ))}

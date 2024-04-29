@@ -29,3 +29,18 @@
         justify-content: space-around;
     }
 }
+
+@media (max-width: 475px) {
+    .container{
+        display: flex;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+        padding: 25px 0;
+        margin-top: 20px;
+        justify-content: space-between;
+        align-items: center;
+        border-top: thin solid rgb(132, 151, 206);
+    }
+}

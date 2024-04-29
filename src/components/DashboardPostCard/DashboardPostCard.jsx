@@ -5,9 +5,13 @@ import Link from "next/link"
 import styles from './dashboardpostcard.module.css';
 import { deletePost } from '../../lib/action';
 import Image from "next/image";
+import moment from "moment";
 
-const DashboardPostCard = ({ image, title, description, _id }) => {
+const DashboardPostCard = ({ image, title, description, _id, createdAt }) => {
     const shortDescription = description.slice(0, 150)
+    const mongodate = createdAt;
+    const date = new Date(mongodate); 
+    const formattedDate = moment(date).format('DD/MM/YYYY')
 
 
     return (
@@ -18,7 +22,7 @@ const DashboardPostCard = ({ image, title, description, _id }) => {
                     {image && <div className={styles.imageContainer}>
                         <Image src={image} alt="post-image" className={styles.image} height={400} width={300} />
                     </div>}
-                    <span className={styles.date}>01.01.2024</span>
+                    <span className={styles.date}>{formattedDate}</span>
                 </div>
 
                 <div className={styles.bottom}>

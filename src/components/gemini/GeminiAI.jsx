@@ -9,6 +9,7 @@ const GeminiAI = () => {
 
     const [clicked, setClicked] = useState(false);
     const [response, setResponse] = useState("");
+    const [loading, setLoading] = useState(false);
     const responseContainerRef = useRef(null);
 
     function handleOnClick() {
@@ -16,9 +17,10 @@ const GeminiAI = () => {
     }
 
     async function handlePrompt(e) {
+        setLoading(!loading);
         const res = await generateResponseAI(e.target.value);
         setResponse(res);
-
+        setLoading(false);
     }
     useEffect(() => {
         if (clicked && response && responseContainerRef.current) {
@@ -36,7 +38,7 @@ const GeminiAI = () => {
                             <p>Select one of these options to get help with blog ideas!</p>
                         </div>
                         <div className={styles.prompts}>
-                            <button onClick={handlePrompt} value='Generate five blog ideas maximum in a list using ul and li tags each list item will have a blog idea just return that. also you must not add any separators such as `-` or anything of that sort I just want the html code with blog ideas in it.'>Trending Blog Topics</button>
+                            <button onClick={handlePrompt} value='Generate five blog ideas maximum in a list using ul and li tags each list item will have a blog idea just return that. also you must not add any separators such as `-` or anything of that sort I just want the html code with blog ideas in it.'>{loading ? 'Generating...' : 'Trending Blog Topics'}</button>
                         </div>
                         <div ref={responseContainerRef} className={styles.responseContainer}>
                         </div>

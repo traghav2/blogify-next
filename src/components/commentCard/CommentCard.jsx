@@ -33,9 +33,9 @@ const CommentCard = ({ replies, sessionUserImage,sessionUserName, commentId, com
                     <p className={styles.date}>{formattedDate}</p>
                 </div>
 
-                <div className={styles.reply}>
+                {sessionUserName && <div className={styles.reply}>
                     <p onClick={() => setToggle(!toggle)} className={styles.replyToggle}>Reply</p>
-                </div>
+                </div>}
             </div>
             <div className={styles.content}>
                 <p className={styles.comment}>{comment}</p>
