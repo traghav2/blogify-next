@@ -20,7 +20,7 @@ const DashboardPostCard = ({ image, title, description, _id, createdAt }) => {
             <div className={styles.contentContainer}>
                 <div className={styles.top}>
                     {image && <div className={styles.imageContainer}>
-                        <Image src={image} alt="post-image" className={styles.image} height={400} width={300} />
+                        <Image src={image} alt="post-image" className={styles.image} height={250} width={330} />
                     </div>}
                     <span className={styles.date}>{formattedDate}</span>
                 </div>

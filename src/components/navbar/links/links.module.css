@@ -18,9 +18,18 @@
     text-align: center;
 }
 
+.link:hover{
+    color: aqua;
+    transition: color 0.3s ease-in-out;
+}
+
 .active{
     background-color: var(--text);
     color: var(--bg);
+}
+
+.active:hover{
+    color: black;
 }
 
 .logout{
@@ -77,8 +86,8 @@
     .mobileLinks{
         position: absolute;
         z-index: 10;
-        top: 85%;
-        right: 0;
+        top: 15%;
+        right: 20px;
         height:350px;
         border-radius: 20px;
         background-color: rgb(23, 23, 23);

@@ -7,6 +7,7 @@ import CommentCard from '../../../../components/commentCard/CommentCard';
 import moment from 'moment';
 import { auth } from '../../../../lib/auth';
 import Summary from '../../../../components/summaryCard/summary';
+import ShareBlog from '../../../../components/shareBlog/ShareBlog';
 
 
 export const generateMetadata = async ({ params }) => {
@@ -29,11 +30,15 @@ const SinglePostPage = async ({ params }) => {
 
     return (
         <div className={styles.container}>
-            <Summary postDescription = {post.description} />
+            <Summary postDescription={post.description} />
             <div className={styles.blogContainer}>
                 <div className={styles.imageContainer}>
                     <Image className={styles.image} src={post.image} alt='blog-image' fill />
                 </div>
+
+
+                <ShareBlog />
+
 
                 <div className={styles.textContainer}>
                     <div className={styles.title}>{post.title}</div>
@@ -66,10 +71,10 @@ const SinglePostPage = async ({ params }) => {
 
                         return (
                             <CommentCard
-                                sessionUserImage = {session?.user?.image}
-                                sessionUserName = {session?.user?.name}
+                                sessionUserImage={session?.user?.image}
+                                sessionUserName={session?.user?.name}
                                 commentId={comment._id.toString()}
-                                replies = {JSON.stringify(comment.replies)}
+                                replies={JSON.stringify(comment.replies)}
                                 formattedDate={formattedDate}
                                 comment={comment.comment}
                                 image={comment.displayPic}

@@ -10,6 +10,7 @@
 .blogContainer {
     display: flex;
     gap: 40px;
+    position: relative;
 }
 
 .comments{

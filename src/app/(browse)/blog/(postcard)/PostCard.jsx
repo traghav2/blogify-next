@@ -15,7 +15,7 @@ const PostCard = ({post}) => {
         <div className={styles.container}>
             <div className={styles.top}>
                 {post.image && <div className={styles.imageContainer}>
-                    <Image src={post.image} alt="post-image" className={styles.image} height={400} width={300} />
+                    <Image src={post.image} alt="post-image" className={styles.image} width={320} height={220} />
                 </div>}
                 <span className={styles.date}>{formattedDate}</span>
             </div>

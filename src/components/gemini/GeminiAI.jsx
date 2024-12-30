@@ -41,6 +41,7 @@ const GeminiAI = () => {
                             <button onClick={handlePrompt} value='Generate five blog ideas maximum in a list using ul and li tags each list item will have a blog idea just return that. also you must not add any separators such as `-` or anything of that sort I just want the html code with blog ideas in it.'>{loading ? 'Generating...' : 'Trending Blog Topics'}</button>
                         </div>
                         <div ref={responseContainerRef} className={styles.responseContainer}>
+                            
                         </div>
                     </div>
                 )}

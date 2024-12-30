@@ -45,7 +45,7 @@
     margin-bottom: 15px;
     height: 450px;
     margin-left: 40px;
-    border-radius: 40px;
+    border-radius: 40px
 }
 
 .prompts{
@@ -82,6 +82,12 @@
 }
 
 @media (max-width: 640px) {
+    .floatingButton{
+        position: absolute;
+        top: 30px;
+        right: 45%;
+    }
+
     .chatBotContainer{
         top: 120px;
         width: 300px;
