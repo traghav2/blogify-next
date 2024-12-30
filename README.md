@@ -1,11 +1,12 @@
 ## Getting Started
 
-Screenshots:
+## Screenshots:
+
 ![Screenshot 2024-05-14 200534](https://github.com/user-attachments/assets/96e70a00-02e7-4b6a-9176-ae1012f6794a)
 
 ![Screenshot 2024-05-14 200349](https://github.com/user-attachments/assets/eb2e592d-8927-4952-b37c-305de742d90a)
 
-![Screenshot 2024-05-04 202120](https://github.com/user-attachments/assets/c75535ea-08ed-4a08-abc9-0f68ed9ae7c3
+![Screenshot 2024-05-04 202120](https://github.com/user-attachments/assets/c75535ea-08ed-4a08-abc9-0f68ed9ae7c3).
 
 ![Screenshot 2024-05-14 200829](https://github.com/user-attachments/assets/2a9d2044-5366-4fc5-9fee-cf93c49eccf0)
 
